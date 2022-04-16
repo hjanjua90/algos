@@ -9,7 +9,7 @@ class SLLNode{
         this.next= null;
     }
 }
-
+// hello
 class SLL{
     constructor(){
         // head = first node
