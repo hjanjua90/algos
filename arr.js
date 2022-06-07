@@ -46,6 +46,8 @@
 
 
 
+
+
 // finding the largest and smallest number in an unsorted array of integers
 
 // let arr = [-2,3,4,6,8,10,0]
@@ -88,6 +90,9 @@
 //     return result;
 // }
 // console.log(cummulativeSum(arr))
+
+
+
 
 
 
@@ -164,23 +169,114 @@
 // Find all pairs in an array of integers whose sum is equal to a given number
 // return matching pairs or empty arrays
 
-let arr = [1,5,6,1,0,1];
+// let arr = [1,5,6,1,0,1];
 
-const findSumPairs = (arr, value) => {
-    let sumLookup = {};
-    let output = [];
+// const findSumPairs = (arr, value) => {
+//     let sumLookup = {};
+//     let output = [];
 
-    for(let i=0; i < arr.length; i++){
-        let targetVal = value - arr[i];
+//     for(let i=0; i < arr.length; i++){
+//         let targetVal = value - arr[i];
 
-        if (sumLookup[targetVal]){
-            output.push([arr[i], targetVal]);
-        }
-        sumLookup[arr[i]] = true;
+//         if (sumLookup[targetVal]){
+//             output.push([arr[i], targetVal]);
+//         }
+//         sumLookup[arr[i]] = true;
+//     }
+//     return output;
+// }
+
+// console.log(findSumPairs(arr, 6))
+
+
+
+
+
+
+
+
+
+// Creating a "COUNTER" vaariable
+// e.g Num of times integer appears in an array. This can also be useful when algo asks to return the sum of some value.
+
+// function countOfNUms(arr, num){
+//     var count = 0;
+
+//     for(var i=0; i< arr.length; i++){
+//         if(arr[i] === num){
+//             count++
+//         }
+//     }
+//     return count;
+// }
+
+// var values = [1,2,3,4,3,3];
+// var num = 3
+
+// console.log(countOfNUms(values, num))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// creating a "fast" and "slow" pointer.
+// one pointer increments by 1 and the other by 2.
+// useful in sorting algos and to find the middle element in a linked list
+
+// function getMiddleElement(linkedList){
+//     var node = getHead(linkedList);
+
+
+//     var slow = node;
+//     var fast = node;
+
+
+//     while(fast !=null && fast.next!=null){
+//         fast = fast.next.next;
+//         slow = slow.next
+//     }
+//     return slow.data;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Use second array when looping through an array in reverse order
+
+function reverseArray(array){
+    var arrayTwo = [];
+
+    for(var i = array.length -1; i>=0; i++){
+        arrayTwo.push(array[i]);
     }
-    return output;
+    array = arrayTwo;
+    return array;
 }
 
-console.log(findSumPairs(arr, 6))
+var values = [1,2, 3]
+
+console.log(reverseArray(array))
 
 
