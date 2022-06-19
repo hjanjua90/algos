@@ -5,15 +5,57 @@
 // Write a function that finds F(n) given n where n is an integer greater than equal to 0. For the first term n = 0.
 
 // method 1 
-function fibonacci(n){
-    // input value <=1 
-    if(n<=1) return n;
-    // input value greater than 1
-    else return fibonacci (n-1) + fibonacci (n-2);
-}
-// 0,1,1,2,3,5,8,13,21
-console.log(fibonacci(1))
+// time complexity => T = O(2^n)
+// space complexity => S= O(n)
+// function fibonacci(n){
+//     // input value <=1 
+//     if(n<=1) return n;
+//     // input value greater than 1
+//     else return fibonacci (n-1) + fibonacci (n-2);
+// }
+// // 0,1,1,2,3,5,8,13,21
+// console.log(fibonacci(3))
 
+
+
+//method2 Memoization = is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again
+//(where we store things we compute and use them later on)
+//time complexity => T = O(n)
+// space complexity => S = O(n)
+// function fibonacci(n){
+//     // storing given values in hashtable(ht)
+//     const ht = {0:0,1:1};
+//     if(n in ht){
+//         return ht[n];
+//     }else{
+//         ht[n]=fibonacci(n-1)+fibonacci(n-2);
+//         return ht[n];
+//     }
+// }
+// console.log(fibonacci(8))
+
+
+
+
+//method3 Iteration
+//time complexity => T = O(n)
+// space complexity => S = O(1); because we are only storing 3 values curr, prev, next;
+
+// function fibonacci(n){
+//     if(n<=1) return n;
+//     let counter =1;
+//     let prev = 0;
+//     let curr=1;
+//     let next;
+//     while(counter<n){
+//         next = prev + curr;
+//         prev = curr;
+//         curr = next;
+//         counter++;
+//     }
+//     return curr;
+// }
+// console.log(fibonacci(8))
 
 
 
@@ -29,6 +71,26 @@ console.log(fibonacci(1))
 // For e.g. [2,3[4,1,2]] = 2+3+ (4+1+2)^2
 
 // [1,2,[7,[3,4],2]] = 1 + 2 +( 7+(3+4)^3+2)^2
+
+//time complexity => T = O(N) where n is total number of all elements in the main array and all sub arrays.
+// space complexityy => S = O(d) where d is maximum depth -> num of recursive calls all at once. 
+
+// function powerSum(array, power=1){
+//     let sum = 0;
+//     for(const element of array){
+//         if(Array.isArray(element)){
+//             sum += powerSum(element, power+1);
+//         }else {
+//             sum += element;
+//         }
+//     }
+
+//     return Math.pow(sum, power);
+
+// }
+// array = [1,2,[4,1]]
+// console.log(powerSum(array));
+
 
 
 
