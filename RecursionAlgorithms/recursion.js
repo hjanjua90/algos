@@ -93,9 +93,38 @@
 
 
 
+// Question 1:
+//  Permutations - Given an array of distinct integers, return all the possible permutations. You can return the answer in any order.
+function allPermutation(num){
+    const permutation = [];
+    function helper(nums,i){
+        if(i === nums.length-1){
+            permutation.push(nums.slice());
+            return;
+        }
+        for(let j=i; j<nums.length; j++)
+        // swap i,j
+        [nums[i],nums[j]] =[nums[j],nums[i]];
+        // recursive
+        helper(nums, i+1);
+        // swap i,j
+        [nums[i],nums[j]] =[nums[j],nums[i]];
+    }
+    helper (num,0);
+    return permutation;
+}
+console.log(allPermutation([1,2]))
 
 
 
 
+
+
+
+
+
+// Question 2:
+//  Power Set - Given an integer array of unique elements, return all possible subsets (the power set). 
+// The solution set must not contain duplicate subsets. Return the solution in any order.
 
 
