@@ -72,5 +72,38 @@
 
 
 // method 2
+// T=O(n)
+// S=O(n)
+// function isPalidromeCheck(string){
+//     let newStringToCompare = [];
+//     for(let i = string.length-1;i>=0; i--){
+//         newStringToCompare.push(string[i]);
+//     }
+//     if(newStringToCompare.join('') === string)return true;
+//     else return false; 
+    
+// }
+
+// a = 'aabbaa';
+// console.log(isPalidromeCheck(a));
 
 
+// method 3 BEST SOLUTION
+// T= O(n)
+// S=O(1)
+
+function isPalidromeCheck(string){
+    let i=0;
+    let j= string.length-1
+    while(i<=j){
+        if (string[i] !== string[j]) return false;
+        else {
+            i++;
+            j--;
+        }
+    }
+    return true; 
+}
+
+a = 'aca';
+console.log(isPalidromeCheck(a));
