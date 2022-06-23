@@ -27,24 +27,50 @@
 // console.log(findNonRepeatingCharacter(a))
 
 // Method 2 Using HashTable
+// T = O(n);
+// S = O(1);
 
-function findNonRepeatingCharacter(string){
-    const hashtable = {};
-    for ( let i=0;i<string.length;i++){
-        if(string[i] in hashtable){
-            hashtable[string[i]]++;
-        }else {
-            hashtable[string[i]]=1;
-        }
-    }
-    for (let i=0;i<string.length;i++){
-        if(hashtable[string[i]] === 1){
-            return i;
-        }
-    }return null;
-}
-// 'abbd'{a:1, b:2, d:1}
-a='1a2a1bbda'
-console.log(findNonRepeatingCharacter(a))
+// function findNonRepeatingCharacter(string){
+//     const hashtable = {};
+//     for ( let i=0;i<string.length;i++){
+//         if(string[i] in hashtable){
+//             hashtable[string[i]]++;
+//         }else {
+//             hashtable[string[i]]=1;
+//         }
+//     }
+//     for (let i=0;i<string.length;i++){
+//         if(hashtable[string[i]] === 1){
+//             return i;
+//         }
+//     }return null;
+// }
+// // 'abbd'{a:1, b:2, d:1}
+// a='1a2a1bbda'
+// console.log(findNonRepeatingCharacter(a))
+
+
 // Question 2:Palindrome-You are given a string. 
 // Write a function to check whether the string is a palindrome or not.
+
+// method 1
+// T=O(n^2)
+// S=O(n)
+
+// function isPalidromeCheck(string){
+//     let newStringToCompare = '';
+//     for(let i = string.length-1;i>=0; i--){
+//         newStringToCompare+=string[i];
+//     }
+//     if(newStringToCompare === string)return true;
+//     else return false; 
+    
+// }
+// a = 'aafbbaa';
+// console.log(isPalidromeCheck(a));
+
+
+
+// method 2
+
+
