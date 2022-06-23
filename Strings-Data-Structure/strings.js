@@ -92,18 +92,50 @@
 // T= O(n)
 // S=O(1)
 
-function isPalidromeCheck(string){
-    let i=0;
-    let j= string.length-1
-    while(i<=j){
-        if (string[i] !== string[j]) return false;
-        else {
-            i++;
-            j--;
-        }
-    }
-    return true; 
-}
+// function isPalidromeCheck(string){
+//     let i=0;
+//     let j= string.length-1
+//     while(i<=j){
+//         if (string[i] !== string[j]) return false;
+//         else {
+//             i++;
+//             j--;
+//         }
+//     }
+//     return true; 
+// }
 
-a = 'aca';
-console.log(isPalidromeCheck(a));
+// a = 'aca';
+// console.log(isPalidromeCheck(a));
+
+
+// Question 3:
+// Longest Unique char Substring - Given a string s, find the length of the longest substring without repeating characters.
+const maxLength = function(string){
+    let max = 0;
+    let start=0;
+    // hash table
+    const seen ={};
+    for (let i=0; i<string.length; i++){
+        const char = string[i];
+        if (char in seen){
+            start = Math.max(start, seen[char]+1);
+        }
+        max = Math.max(max, i-start+1);
+        // make an entry to hash table if char is not there
+        seen[char] =i;
+    }
+    return max;
+}
+a ='abcdb'
+console.log(maxLength(a))
+
+
+
+
+
+
+// Question 4:
+// Group Anagrams - Given an array of strings consisting of lower case English letters, group the anagrams together.
+//  You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different 
+// word or phrase, using all the original letters exactly once.
