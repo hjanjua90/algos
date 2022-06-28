@@ -114,7 +114,7 @@
 const maxLength = function(string){
     let max = 0;
     let start=0;
-    // hash table
+    // hash table = seen
     const seen ={};
     for (let i=0; i<string.length; i++){
         const char = string[i];
@@ -127,7 +127,7 @@ const maxLength = function(string){
     }
     return max;
 }
-a ='abcdb'
+a ='abcdebegb'
 console.log(maxLength(a))
 
 
@@ -139,3 +139,19 @@ console.log(maxLength(a))
 // Group Anagrams - Given an array of strings consisting of lower case English letters, group the anagrams together.
 //  You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different 
 // word or phrase, using all the original letters exactly once.
+// T = O(s*nlogn)
+// S = O(s*n)
+const groupAnagrams= function(strings){
+    const sorted = strings.map(x=>x.split('').sort().join(''));
+    const ht = {};
+    // iterate through given array. hashTable - key array and values - strings array
+    for (let i =0; i<strings.length; i++){
+        if(!ht[sorted[i]]) ht[sorted[i]] = [strings[i]];
+        else ht[sorted[i]].push(strings[i]);
+    }
+    return Object.values(ht);
+}
+
+strings = ["eat", "tea", "act", "cat", "pan", "nap", "bat", "tab"]
+
+console.log(groupAnagrams(strings))
